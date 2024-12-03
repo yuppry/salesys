@@ -1,11 +1,11 @@
 package com.salesys.sale.model;
 
 import jakarta.persistence.*;
-
-import java.sql.Date;
+import lombok.Data;
+import java.sql.Timestamp;
 import java.util.List;
 
-
+@Data
 @Entity
 @Table(name = "customer")
 public class Customer {
@@ -30,12 +30,12 @@ public class Customer {
     private String address;
 
     @Column
-    private Date createdDate;
+    private Timestamp createdDate;
 
     @Column
-    private Date modifiledDate;
+    private Timestamp modifiedDate;
 
-    @Column
+    @Column(name = "is_deleted")
     private boolean isDeleted;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)

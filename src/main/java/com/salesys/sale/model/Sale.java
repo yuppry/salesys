@@ -1,12 +1,17 @@
 package com.salesys.sale.model;
 
 import jakarta.persistence.*;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "sale")
+@NoArgsConstructor
+@Data
 public class Sale {
 
     @Id
@@ -21,15 +26,15 @@ public class Sale {
     private Double amount;
 
     @Column
-    private Date saleDate;
+    private Timestamp saleDate;
 
     @Column
-    private Date modifiedDate;
+    private Timestamp modifiedDate;
 
-    @Column
+    @Column(name = "is_deleted")
     private boolean isDeleted;
 
     @OneToMany(mappedBy = "sale", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Transaction> transactions;
+    private List<SaleDetail> saleDetails;
 
 }

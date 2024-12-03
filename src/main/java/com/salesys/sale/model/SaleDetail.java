@@ -1,14 +1,19 @@
 package com.salesys.sale.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "transaction")
-public class Transaction {
+@Table(name = "saleDetail")
+@Data
+
+public class SaleDetail {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long transactionId;
+    private Long saleDetailId;
 
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)

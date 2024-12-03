@@ -1,10 +1,11 @@
 package com.salesys.sale.model;
 
 import jakarta.persistence.*;
-
-import java.sql.Date;
+import lombok.Data;
+import java.sql.Timestamp;
 import java.util.List;
 
+@Data
 @Entity
 @Table(name = "product")
 public class Product {
@@ -23,18 +24,18 @@ public class Product {
     private Double price;
 
     @Column
-    private int quantity;
+    private Integer quantity;
 
     @Column
-    private Date createdDate;
+    private Timestamp createdDate;
 
     @Column
-    private Date modifiledDate;
+    private Timestamp modifiedDate;
 
-    @Column
+    @Column(name = "is_deleted")
     private boolean isDeleted;
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Transaction> transactions;
+    private List<SaleDetail> saleDetails;
 
 }

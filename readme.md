@@ -1,13 +1,12 @@
-### Database Design : fileName - DB_design
+### Database Design : fileName - [DB_design](https://github.com/yuppry/salesys/blob/main/DB_design.drawio.png)
 
-### Report fileName : Daily_Sale_Report_yyyy-mm-dd.csv
-
+### Report fileName : [Daily_Sale_Report_yyyy-mm-dd.csv](https://github.com/yuppry/salesys/blob/main/Daily_Sale_Report_2024-12-03.csv)
 ### Docker Compose - MySQL
 ```bash
 docker-compose up
 ```
 
-### Postman Collection fileName : SaleSys.postman_collection
+### Postman Collection fileName : [SaleSys.postman_collection](https://github.com/yuppry/salesys/blob/main/SaleSys.postman_collection.json)
 
 ### Request body for [Post] addNewCustomer
 ```Json
